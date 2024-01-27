@@ -69,7 +69,7 @@ You can also observe that this section has deployed an external connection to Ve
 
 ## Segmentation
 You should have a in the Models section of your dataset a model called `sales_segments`. When Navigating in the model's Evaluation section you should see your features with the Country, Brand and Category such as :
-![diagram](./assets/country.png)![diagram](./assets/category.png)
+![country](./assets/country.png)![category](./assets/category.png)
 .
 
 ## Product recommendation
