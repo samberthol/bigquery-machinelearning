@@ -12,7 +12,7 @@ This terraform deployment uses the `thelook_ecommerce` dataset to do the followi
 
 ## Architecture Design
 
-We will be choosing our training models as per the recommended [Selection guide](https://cloud.google.com/bigquery/docs/bqml-introduction#model_selection_guide) proposed by Google
+We will be choosing our training models as per the recommended [Selection guide](https://cloud.google.com/bigquery/docs/bqml-introduction#model_selection_guide) proposed by Google Cloud
 ![diagram](https://cloud.google.com/static/bigquery/images/ml-model-cheatsheet.svg)
 
 
@@ -68,6 +68,9 @@ This will display a table in the Query Results section with a column named `ml_g
 You can also observe that this section has deployed an external connection to VertexAI as well as a Model called `bison_model` in your dataset.
 
 ## Segmentation
+You should have a in the Models section of your dataset a model called `sales_segments`. When Navigating in the model's Evaluation section you should see your features with the Country, Brand and Category such as :
+![diagram](./assets/country.png)![diagram](./assets/category.png)
+.
 
 ## Product recommendation
 
