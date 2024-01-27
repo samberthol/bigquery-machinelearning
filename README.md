@@ -79,7 +79,7 @@ You should have a in the Models section of your dataset a model called `sales_se
    <body>
 <div style="text-align: center;">     
 <img src="./assets/country.png" alt="country" width="320"/>
-<img src="./assets/category.png" alt="category" width="320"/>
+
 </div>
    </body>
 </html>
