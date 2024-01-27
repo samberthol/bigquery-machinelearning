@@ -73,13 +73,14 @@ A description can resemble this :
 
 You can also observe that this section has deployed an external connection to VertexAI as well as a Model called `bison_model` in your dataset. Read from this [Google Cloud Bigquery ML Tutorial](https://cloud.google.com/bigquery/docs/generate-text-tutorial) for more information on the Generative AI feature.
 
-## Segmentation
+## Clustering
 You should have a in the Models section of your dataset a model called `sales_segments`. When Navigating in the model's Evaluation section you should see your features with the Country, Brand and Category such as :
 <p align="center">
 <img src="./assets/country.png" alt="country" width="320"/>
 <img src="./assets/category.png" alt="category" width="320"/>
 </p>
-For more information on k-means, please refer to the Google Cloud documentation.
+
+For more information on k-means, please refer to the [Google Cloud documentation](https://cloud.google.com/bigquery/docs/kmeans-tutorial).
 
 ## Product recommendation
 
