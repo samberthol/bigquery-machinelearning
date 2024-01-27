@@ -74,9 +74,8 @@ You can also observe that this section has deployed an external connection to Ve
 
 ## Segmentation
 You should have a in the Models section of your dataset a model called `sales_segments`. When Navigating in the model's Evaluation section you should see your features with the Country, Brand and Category such as :
-![country](./assets/country.png)![category](./assets/category.png)
-<img src="country.png" alt="country" width="200"/>
-<img src="category.png" alt="category" width="200"/>
+<img src="./assets/country.png" alt="country" width="200"/>
+<img src="./assets/category.png" alt="category" width="200"/>
 
 For more information on k-means, please refer to the Google Cloud documentation.
 
