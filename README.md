@@ -75,12 +75,18 @@ You can also observe that this section has deployed an external connection to Ve
 ## Segmentation
 You should have a in the Models section of your dataset a model called `sales_segments`. When Navigating in the model's Evaluation section you should see your features with the Country, Brand and Category such as :
 <!DOCTYPE html>
+   <head>
+      <title>Centering an image in HTML using the Style Attribute</title>
+   </head>
 <html lang=”en”>
    <body>
+         <h1>Aligning an Image in center</h1>
+         <p>In this example, the image is wrapped in a block-type element, for ex. a div tag. The div is styled with the text-align property to center the image below. </p>
 <div style="text-align: center;">     
 <img src="./assets/country.png" alt="country" width="320"/>
-
+<img src="./assets/category.png" alt="category" width="320"/>
 </div>
+      <p>This is the simplest but most limited method.</p>
    </body>
 </html>
 For more information on k-means, please refer to the Google Cloud documentation.
