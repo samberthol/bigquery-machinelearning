@@ -13,8 +13,9 @@ This terraform deployment uses the `thelook_ecommerce` dataset to do the followi
 ## Architecture Design
 
 We will be choosing our training models as per the recommended [Selection guide](https://cloud.google.com/bigquery/docs/bqml-introduction#model_selection_guide) proposed by Google Cloud
-![diagram](https://cloud.google.com/static/bigquery/images/ml-model-cheatsheet.svg)
-
+<p align="center">
+<img src="https://cloud.google.com/static/bigquery/images/ml-model-cheatsheet.svg" alt="category" width="600"/>
+</p>
 
 ## Components
 This project mainly relies on Google Cloud [BigQuery](https://cloud.google.com/bigquery/docs/introduction). It uses a copy of `bigquery-public-data.thelook_ecommerce` locally in the newly created project to host views and models.
