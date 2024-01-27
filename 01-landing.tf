@@ -12,6 +12,8 @@ locals {
     "bigquerystorage.googleapis.com",
     "iam.googleapis.com",
     "analyticshub.googleapis.com",
+    "bigqueryconnection.googleapis.com",
+    "aiplatform.googleapis.com"
   ]
   iam_lnd = {
     "roles/bigquery.admin" = [
@@ -19,7 +21,7 @@ locals {
     ]
    "roles/iam.serviceAccountTokenCreator" = [
       module.land-sa-0.iam_email
-    ]   
+    ]
   }
 }
 

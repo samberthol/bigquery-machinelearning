@@ -29,3 +29,13 @@ output "bigquery-datasets" {
     thelook_dataset        = module.thelook-dataset.dataset_id
   }
 }
+
+output "sa" {
+  description = "sa"
+  value = {
+    sa_bq_con        = google_bigquery_connection.connection.cloud_resource[0]
+  }
+}
+
+
+      
