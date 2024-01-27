@@ -29,13 +29,3 @@ resource "google_bigquery_data_transfer_config" "thelook-transfer" {
   }
 }
 
-# Creating a simple view on the dataset
-resource "null_resource" "dataset-view" {
-  triggers = {
-   always_run = "${timestamp()}"
-  }
-  depends_on = [google_bigquery_data_transfer_config.thelook-transfer, module.thelook-dataset]
-  provisioner "local-exec" {
-    command = "bq query --project_id ${module.land-project.project_id} --nouse_legacy_sql 'CREATE OR REPLACE VIEW `${module.land-project.project_id}.${module.thelook-dataset.dataset_id}._simple_view` AS ( SELECT id, age, email, state, city FROM `${module.land-project.project_id}.${module.thelook-dataset.dataset_id}.users` )';"
-  }
-}
