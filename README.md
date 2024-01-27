@@ -2,13 +2,12 @@
 # Using Bigquery ML for Advertising
 This project provides a Terraform deployment to create a new Google Cloud project that hosts a copy of the `thelook_ecommerce` dataset and applies different [Bigquery Machine Learning](https://cloud.google.com/bigquery/docs/bqml-introduction) technics for advertising purposes.
 
-Disclaimer : This is not supported code by Google and is provided as is, without warranties of any kind.
+**Disclaimer** : This is not supported code by Google and is provided as is, without warranties of any kind.
 
 This terraform deployment uses the `thelook_ecommerce` dataset to do the following :
-- Generate a product description based on the product Brand, Name and Category using GenAI
-- Create segments on sales per brand, product categories and location
-- Predict sales for the top trending products
-- Recommend products based on the previous purchases and most sold products
+- **Generate a product description** based on the product Brand, Name and Category using GenAI
+- **Create segments** on sales per brand, product categories and location
+- **Recommend products** based on the previous purchases and most sold products
 
 ## Architecture Design
 
@@ -20,7 +19,7 @@ We will be choosing our training models as per the recommended [Selection guide]
 ## Components
 This project mainly relies on Google Cloud [BigQuery](https://cloud.google.com/bigquery/docs/introduction). It uses a copy of `bigquery-public-data.thelook_ecommerce` locally in the newly created project to host views and models.
 
-We also use Vertex AI for Generative AI and use the `text-bison` model as an LLM to generate article descriptions.
+We also use [Vertex AI](https://cloud.google.com/bigquery/docs/reference/standard-sql/bigqueryml-syntax-create-remote-model) for Generative AI and use the `text-bison` remote model as an LLM to generate article descriptions.
 
 ## Setup
 
