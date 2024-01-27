@@ -1,6 +1,6 @@
 
 # Using Bigquery ML for Advertising
-This project provides a Terraform deployment to create a new Google Cloud project that hosts a copy of the thelook_ecommerce dataset and applies different Bigquery Machine Learning technics for advertising purposes.
+This project provides a Terraform deployment to create a new Google Cloud project that hosts a copy of the thelook_ecommerce dataset and applies different [Bigquery Machine Learning](https://cloud.google.com/bigquery/docs/bqml-introduction) technics for advertising purposes.
 
 Disclaimer : This is not supported code by Google and is provided as is, without warranties of any kind.
 
@@ -10,14 +10,14 @@ This terraform deployment uses the thelook_ecommerce dataset to do the following
 - Predict sales for the top trending products
 - Recommend products based on the previous purchases and most sold products
 
-We will be choosing our training models as per the recommended Selection guide proposed by Google
+We will be choosing our training models as per the recommended [Selection guide](https://cloud.google.com/bigquery/docs/bqml-introduction#model_selection_guide) proposed by Google
 ![diagram](https://cloud.google.com/static/bigquery/images/ml-model-cheatsheet.svg)
 
 ## Architecture Design
 
 
 ## Components
-This project mainly relies on Google Cloud Bigquery. It uses a copy of `bigquery-public-data.thelook_ecommerce` locally in the newly created project to host views and models.
+This project mainly relies on Google Cloud [BigQuery](https://cloud.google.com/bigquery/docs/introduction). It uses a copy of `bigquery-public-data.thelook_ecommerce` locally in the newly created project to host views and models.
 
 We also use Vertex AI for Generative AI and use the `text-bison` model as an LLM to generate article descriptions.
 
@@ -50,8 +50,10 @@ user@penguin:~/bigquery-datacleanroom-main$ terraform plan
 You can then launch the actual deployment using the `terraform apply` command
 ```
 user@penguin:~/bigquery-datacleanroom-main$ terraform apply -auto-approve 
+```
 
 # Using the models
+
 ## Generative AI
 
 ## Segmentation
