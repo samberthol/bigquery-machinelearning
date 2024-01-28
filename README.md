@@ -12,9 +12,16 @@ This terraform deployment uses the `thelook_ecommerce` dataset to do the followi
 For those three use cases, we employ three ML algorithms that are common in the industry and that are provided as a service within Google Cloud bigquery :
 - **Generative AI** using the `text-bison` LLM from Google. This has various applications for campaigns automation, creative optimization, personalization, localization, sentiment analysis, and other use cases.
 - **K-means for clustering**. This is used for very various cases in the industry from products classification, building cohorts, customer segments, recommendation, personalization, targeting,...
-- **Matrix Factorization** is a common technique for recommendation systems, behavior analysis, cross selling, A/B B testing, dimensional reduction and many more.
+- **Matrix Factorization** is a common technique for recommendation systems, behavior analysis, cross selling, A/B testing, dimensional reduction and many more.
 
 ## Architecture Design
+
+This terraform will create a new project in your environment, create a Bigquery dataset and initiate a Bigquery transfer from the `thelook_ecommerce` public dataset to your environment. It will then create some BQML models in trained on your dataset and initiate a connection to Vertex AI for the LLM. 
+<p align="center">
+<img src="./assets/diagram.png" alt="Diagram" width="600"/>
+</p>
+
+See below the next section to explore how you can use the created models.
 
 We will be choosing our training models as per the recommended [Selection guide](https://cloud.google.com/bigquery/docs/bqml-introduction#model_selection_guide) proposed by Google Cloud
 <p align="center">
