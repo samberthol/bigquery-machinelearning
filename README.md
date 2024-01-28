@@ -23,7 +23,7 @@ This terraform will create a new project in your environment, create a Bigquery 
 
 See below the next section to explore how you can use the created models.
 
-We will be choosing our training models as per the recommended [Selection guide](https://cloud.google.com/bigquery/docs/bqml-introduction#model_selection_guide) proposed by Google Cloud
+We will be choosing our training models as per the recommended [selection guide](https://cloud.google.com/bigquery/docs/bqml-introduction#model_selection_guide) proposed by Google Cloud
 <p align="center">
 <img src="https://cloud.google.com/static/bigquery/images/ml-model-cheatsheet.svg" alt="category" width="600"/>
 </p>
@@ -94,7 +94,7 @@ For more information on k-means, please refer to the [Google Cloud documentation
 
 ## Product recommendation
 
-__Please note__ that in order to use Matrix Factorization, you need a **Bigquery slot reservation of Enterprise Edition**. You can create one temporarily and delete it after testing. Beware to create it in the location where your queries will be executed.
+**Please note** that in order to use Matrix Factorization, you need a **Bigquery slot reservation of Enterprise Edition**. You can create one temporarily and delete it after testing. Beware to create it in the location where your queries will be executed.
 
 To test your recommendation engine, you can issue a SQL query such as:
 ```sql
@@ -126,6 +126,7 @@ GROUP BY 1,2
 ORDER BY predicted_rating desc;          
 """;
 ```
+This will add a new column to your dataset called `predicted_rating`. It displays a float ranking the inclination of a given user to buy a certain Brand. This `predicted_rating` is different from the `rating` as it will factor in how other users behaved in their Brand purchases. 
 
 # Troubleshooting & known issues
 You will probably notice a failure upon initial deployment with setting IAM permissions for the public dataset to be copied to your project. This is because the IAM API from Google Cloud is async and "eventually consistent". The best way to fix this is to wait a couple minutes and launch the `terraform apply` command again. You can also view the logs of the [transfer page](https://console.cloud.google.com/bigquery/transfers) in the Run History tab. Once the transfer is finished, you should run the `terraform apply` command again in order for the deployment to continue.
