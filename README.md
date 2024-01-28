@@ -126,7 +126,38 @@ GROUP BY 1,2
 ORDER BY predicted_rating desc;          
 """;
 ```
-This will add a new column to your dataset called `predicted_rating`. It displays a float ranking the inclination of a given user to buy a certain Brand. This `predicted_rating` is different from the `rating` as it will factor in how other users behaved in their Brand purchases. 
+This will add a new column to your dataset called `predicted_rating`. It displays a float ranking the inclination of a given user to buy a certain Brand. This `predicted_rating` is different from the `rating` as it will factor in how other users behaved in their Brand purchases.
+
+If you want to investigate on all orders passed by a given user to analyse the `rating` against the `predicted_rating` you can issue a sql query such as :
+```sql
+SELECT
+  u.email,
+  p.brand,
+  p.category,
+  o.num_of_item,
+  o.order_id,
+  i.product_id,
+  p.name,
+  p.retail_price,
+  SUM(i.sale_price*o.num_of_item) AS Sales_sum
+FROM
+  `thelook.order_items` AS i
+JOIN
+  `thelook.orders` AS o
+ON
+  i.order_id = o.order_id
+JOIN
+  `thelook.products` AS p
+ON
+  i.product_id = p.id
+JOIN
+  `thelook.users` AS u
+ON
+  u.id = i.user_id
+
+WHERE email = "michaelsmith@example.net"
+GROUP BY 1,2,3,4,5,6,7,8
+```
 
 # Troubleshooting & known issues
 You will probably notice a failure upon initial deployment with setting IAM permissions for the public dataset to be copied to your project. This is because the IAM API from Google Cloud is async and "eventually consistent". The best way to fix this is to wait a couple minutes and launch the `terraform apply` command again. You can also view the logs of the [transfer page](https://console.cloud.google.com/bigquery/transfers) in the Run History tab. Once the transfer is finished, you should run the `terraform apply` command again in order for the deployment to continue.
