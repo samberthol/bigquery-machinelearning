@@ -21,4 +21,11 @@ organization_domain 	= "" # Your organization domain like "example.com"
 # Target Dataset name for the BigQuery Datatransfer from the thelook_ecommerce public dataset
 thelook_dataset = "thelook" # should onlycontain lowercase letters, numbers and underscores
 
+# Location
+location = "eu"
 
+# If set to true, allow Terraform to delete all the tables in the publisher_dataset when destroying the resource
+delete_contents_on_destroy = true
+
+# Configures deletion_protection for the users table. If unset, module-level deletion_protection setting will be used.
+deletion_protection = false

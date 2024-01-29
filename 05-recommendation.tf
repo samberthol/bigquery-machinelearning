@@ -4,7 +4,7 @@
 # distributed is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES
 # OR CONDITIONS OF ANY KIND, either express or implied.
 
-resource "null_resource" "recomentation" {
+resource "null_resource" "recommentation" {
   triggers = {
    always_run = "${timestamp()}"
   }

@@ -98,33 +98,34 @@ For more information on k-means, please refer to the [Google Cloud documentation
 
 To test your recommendation engine, you can issue a SQL query such as:
 ```sql
-EXECUTE IMMEDIATE
-  """
-SELECT *
-  FROM ML.PREDICT(MODEL `thelook.users_recommendation`,
-       (
 SELECT
-  u.email AS user,
-  p.brand as item,
-  SUM(o.num_of_item) AS rating
+  *
 FROM
-  `thelook.order_items` AS i
-JOIN
-  `thelook.orders` AS o
-ON
-  i.order_id = o.order_id
-JOIN
-  `thelook.products` AS p
-ON
-  i.product_id = p.id
-JOIN
-  `thelook.users` AS u
-ON
-  u.id = i.user_id
-GROUP BY 1,2
-        )) 
-ORDER BY predicted_rating desc;          
-""";
+  ML.PREDICT(MODEL `thelook.users_recommendation`,
+    (
+    SELECT
+      u.email AS user,
+      p.brand AS item,
+      SUM(o.num_of_item) AS rating
+    FROM
+      `thelook.order_items` AS i
+    JOIN
+      `thelook.orders` AS o
+    ON
+      i.order_id = o.order_id
+    JOIN
+      `thelook.products` AS p
+    ON
+      i.product_id = p.id
+    JOIN
+      `thelook.users` AS u
+    ON
+      u.id = i.user_id
+    GROUP BY
+      1,
+      2 ))
+ORDER BY
+  predicted_rating DESC;        
 ```
 This will add a new column to your dataset called `predicted_rating`. It displays a float ranking the inclination of a given user to buy a certain Brand. This `predicted_rating` is different from the `rating` as it will factor in how other users behaved in their Brand purchases.
 
