@@ -128,6 +128,9 @@ ORDER BY
   predicted_rating DESC;        
 ```
 This will add a new column to your dataset called `predicted_rating`. It displays a float ranking the inclination of a given user to buy a certain Brand. This `predicted_rating` is different from the `rating` as it will factor in how other users behaved in their Brand purchases.
+<p align="center">
+<img src="./assets/recommendation.png" alt="recommendation" width="600"/>
+</p>
 
 If you want to investigate on all orders passed by a given user to analyse the `rating` against the `predicted_rating` you can issue a sql query such as :
 ```sql
